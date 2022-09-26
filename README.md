@@ -6,4 +6,4 @@ Além disso, foi utilizado um pouco de CSS e HTML afim de desenvolver essas habi
 **Observação**: Todo o código JS foi escrito dentro do HTML da página, utilizando a tag <script></script>.
 
 
-## Link para acessar os exercicíos: https://exercicios-de-logica-java-script-e7in.vercel.app
+### Link para acessar os exercicíos: https://exercicios-de-logica-java-script-e7in.vercel.app
