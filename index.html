@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="reset.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Exercícios de lógica - parte 2</title>
+    </head>
+
+    <body>
+        <header>Exercícios de lógica</header>
+        <main>
+            <!--EXERCICIO 1-->
+            <div class="exercicio">
+                <div class="titulo">
+                    <h1>Exercício 1</h1>
+                </div>
+                <div class="texto">
+                    <p>Calcule a média aritmética das 3 notas de um aluno e 
+                        mostre, além do valor da média, uma mensagem de 
+                        "Aprovado", caso a média seja igual ou superior a 6, ou a 
+                        mensagem "reprovado", caso contrário.
+                    </p>
+                </div>
+                <div class="formulario">
+                    <label for="nota1">1ª nota:</label>
+                    <input type="number" id="nota1" class="inputs"><br>
+
+                    <label for="nota2">2ª nota:</label>
+                    <input type="number" id="nota2" class="inputs"><br>
+
+                    <label for="nota3">3ª nota:</label>
+                    <input type="number" id="nota3" class="inputs">
+
+                    <input type="submit" value="Calcular" id="botao1" class="botao">
+                </div>
+
+                <p id="resposta1" class="resposta"></p>
+
+                <script>
+                    let button1 = document.getElementById("botao1");
+
+                    button1.onclick = function(){
+                        let nota1 = +document.getElementById("nota1").value;
+                        let nota2 = +document.getElementById("nota2").value;
+                        let nota3 = +document.getElementById("nota3").value;
+                        let media = (nota1 + nota2 + nota3) / (3);
+
+                        document.getElementById("resposta1").innerHTML = "Média: " + media;
+                    }
+                </script>
+            </div>
+
+            <!--EXERCICIO 2-->
+            <div class="exercicio">
+                <div class="titulo">
+                    <h1>Exercício 2</h1>
+                </div>
+                <div class="texto">
+                    <p>Elabore um algoritmo que dada a idade de um 
+                        nadador classifica-o em uma das seguintes categorias:<br>
+                            <li>infantil A = 5 - 7 anos<br></li>
+                            <li>infantil B = 8-10 anos<br></li>
+                            <li>juvenil A = 11-13 anos<br></li>
+                            <li>juvenil B = 14-17 anos<br></li>
+                            <li>adulto = maiores de 18 anos<br></li>
+                    </p>
+                </div>
+
+                <div class="formulario">
+                    <label for="idade">Idade:</label>
+                    <input type="number" id="idade" class="inputs">
+
+                    <input type="submit" value="OK" id="botao2" class="botao">
+                </div>
+
+                <p id="resposta2" class="resposta"></p>
+
+                <script>
+                    let button2 = document.getElementById("botao2");
+
+                    button2.onclick = function(){
+                        let idade = +document.getElementById("idade").value;
+                        let categoria;
+
+                        if(idade >= 5 && idade <= 7){
+                            categoria = "infantil A"
+                        }else if (idade >= 8 && idade <= 10){
+                            categoria = "infantil B"
+                        }else if (idade >= 11 && idade <= 13){
+                            categoria = "juvenil A"
+                        }else if (idade >= 14 && idade <= 17){
+                            categoria = "juvenil B"
+                        }else if (idade >= 18){
+                            categoria = "adulto"
+                        }
+
+                        if (idade < 5){
+                            document.getElementById("resposta2").innerHTML = "São aceitos somente nadadores com 5 anos ou mais"
+                        }else{
+                            document.getElementById("resposta2").innerHTML = "Categoria " + categoria;
+                        }
+                    }
+                </script>
+            </div>
+
+            <!--EXERCICIO 3-->
+            <div class="exercicio">
+                <div class="titulo">
+                    <h1>Exercício 3</h1>
+                </div>
+                <div class="texto">
+                    <p> Elaborar um algoritmo que lê 3 valores a,b,c e os 
+                        escreve. A seguir, encontre o maior dos 3 valores e o 
+                        escreva com a mensagem : "É o maior ".
+                    </p>
+                </div>
+
+                <div class="formulario">
+                    <label for="num1">1ª valor:</label>
+                    <input type="number" id="num1" class="inputs"><br>
+
+                    <label for="num2">2ª valor:</label>
+                    <input type="number" id="num2" class="inputs"><br>
+
+                    <label for="num3">3ª valor:</label>
+                    <input type="number" id="num3" class="inputs">
+
+                    <input type="submit" value="OK" id="botao3" class="botao">
+                </div>
+
+                <p id="resposta3" class="resposta"></p>
+
+                <script>
+                    let button3 = document.getElementById("botao3");
+
+                    button3.onclick = function(){
+                        let num1 = +document.getElementById("num1").value;
+                        let num2 = +document.getElementById("num2").value;
+                        let num3 = +document.getElementById("num3").value;
+
+                        if (num1 >= num2 && num1 >= num3){
+                            maior = num1
+                        }else if (num2 >= num1 && num2 >= num3){
+                            maior = num2
+                        }else if (num3 >= num1 && num3 >= num2){
+                            maior = num3
+                        }
+
+                        document.getElementById("resposta3").innerHTML = "a = " + num1 + ", b = " + num2 + ", c = " + num3 + ". É o maior: " + maior;
+                    }
+                </script>
+            </div>
+
+            <!--EXERCICIO 4-->
+            <div class="exercicio">
+                <div class="titulo">
+                    <h1>Exercício 4</h1>
+                </div>
+                <div class="texto">
+                    <p> Faça um algoritmo que leia um nº inteiro e mostre 
+                        uma mensagem indicando se este número é par ou ímpar, 
+                        e se é positivo ou negativo.
+                    </p>
+                </div>
+
+                <div class="formulario">
+                    <label for="num">Digite um numero:</label>
+                    <input type="number" id="num" class="inputs">
+
+                    <input type="submit" value="OK" id="botao4" class="botao">
+                </div>
+
+                <p id="resposta4" class="resposta"></p>
+
+                <script>
+                    let button4 = document.getElementById("botao4");
+
+                    button4.onclick = function(){
+                        let num = +document.getElementById("num").value;
+                        let tipo1; /* par ou impar */
+                        let tipo2; /* positivo ou negativo */
+
+                        if(num % 2 === 0 && num > 0){
+                            tipo1 = "par"
+                            tipo2 = "positivo"
+                        }else if (num % 2 === 0 && num < 0){
+                            tipo1 = "par"
+                            tipo2 = "negativo"
+                        }else if (num % 2 !== 0 && num > 0){
+                            tipo1 = "ímpar"
+                            tipo2 = "positivo"
+                        }else{
+                            tipo1 = "ímpar"
+                            tipo2 = "negativo"
+                        }
+
+                        document.getElementById("resposta4").innerHTML = "Resposta: " + num + " é " + tipo1 + " e " + tipo2;
+                    }
+                </script>
+            </div>
+
+            <!--EXERCICIO 5-->
+            <div class="exercicio">
+                <div class="titulo">
+                    <h1>Exercício 5</h1>
+                </div>
+                <div class="texto">
+                    <p> Crie um programa que imprima a soma de todos os 
+                        números pares 0 até 100; Use a estrutura while.
+                    </p>
+                </div>
+
+                <div class="formulario">
+                    <input type="submit" value="Testar exercicio" id="botao5" class="botao">
+                </div>
+
+                <p id="resposta5" class="resposta"></p>
+
+                <script>
+                    let button5 = document.getElementById("botao5");
+
+                    button5.onclick = function(){
+                        let x = 0;
+                        let soma = 0;
+                        while (x !== 101){
+                            if (x % 2 === 0){
+                                soma += x
+                            }
+                            x += 1;
+                        }
+                        document.getElementById("resposta5").innerHTML = "Resposta: soma = " + soma;
+                    }
+                </script>
+            </div>
+
+            <!--EXERCICIO 6-->
+            <div class="exercicio">
+                <div class="titulo">
+                    <h1>Exercício 6</h1>
+                </div>
+                <div class="texto">
+                    <p>  Gerar a sequência de fibonacci dos 100 primeiros 
+                        termos usando while: 0,1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 
+                        233, 377, 610, 987, 1597...
+                    </p>
+                </div>
+
+                <div class="formulario">
+                    <input type="submit" value="Testar exercicio" id="botao6" class="botao">
+                </div>
+
+                <p id="resposta6" class="resposta"></p>
+
+                <script>
+                    let button6 = document.getElementById("botao6");
+                    let x = 0;
+
+                    button6.onclick = function(){
+                        let sequencia = [0, 1];
+
+                        while(x <= 98){
+                            num = sequencia[x] + sequencia[x + 1];
+                            sequencia.push(num);
+                            x++;
+                        }
+                        document.getElementById("resposta6").textContent = sequencia;
+                    }
+                </script>
+            </div>
+
+            <!--EXERCICIO 7-->
+            <div class="exercicio">
+                <div class="titulo">
+                    <h1>Exercício 7</h1>
+                </div>
+                <div class="texto">
+                    <p> Escreva um programa que calcule o fatorial de N 
+                        iterativamente. 
+                    </p>
+                </div>
+
+                <div class="formulario">
+                    <label for="fatorial">Fatorial:</label>
+                    <input type="number" id="fatorial" class="inputs">
+
+                    <input type="submit" value="Calcular" id="botao7" class="botao">
+                </div>
+
+                <p id="resposta7" class="resposta"></p>
+
+                <script>
+                    let button7 = document.getElementById("botao7");
+
+                    button7.onclick = function(){
+                        let n = +document.getElementById("fatorial").value;
+                        let fatorial = n;
+
+                        for(let x = 1; x < n; x++){
+                            fatorial *= (n - x);
+                        }
+                        document.getElementById("resposta7").innerHTML = n + "! = " + fatorial;
+                    }
+                </script>
+            </div>
+
+            <!--EXERCICIO 8-->
+            <div class="exercicio">
+                <div class="titulo">
+                    <h1>Exercício 8</h1>
+                </div>
+                <div class="texto">
+                    <p> Responda as questões Q5 e Q6 usando a estrutura 
+                        do/while!
+                    </p>
+                </div>
+
+                // FAZER MAIS TARDE
+            </div>
+
+             <!--EXERCICIO 9-->
+             <div class="exercicio">
+                <div class="titulo">
+                    <h1>Exercício 9</h1>
+                </div>
+                <div class="texto">
+                    <p> Faça um programa que exiba no console todos os 
+                        números primos de 1 até 150. Os números primos são 
+                        aqueles que só são divisíveis por 1 e por eles mesmos 
+                        (exemplo: 1, 3, 5, 7, ...). Use o comando for;
+                    </p>
+                </div>
+
+                <div class="formulario">
+                    <input type="submit" value="Testar exercicio" id="botao9" class="botao">
+                </div>
+
+                <p id="resposta9" class="resposta"></p>
+
+                <script>
+                    let button9 = document.getElementById("botao9");
+
+                    button9.onclick = function(){
+                        let primos = [];
+                        var contador = 0; 
+
+                        for (num = 2; num !== 150; num++){ //num = 3
+                            for(x = 2; x != 13; x++){ // x = 
+                                if (num !== x && num % x === 0){ 
+                                    contador++;
+                                }
+                            }
+                            contador === 0 ? primos.push(num) : false;
+                            contador = 0;
+                        }
+                        document.getElementById("resposta9").textContent = "Números primos: "+ primos;
+                    }
+                </script>
+            </div>
+
+             <!--EXERCICIO 10-->
+             <div class="exercicio">
+                <div class="titulo">
+                    <h1>Exercício 10</h1>
+                </div>
+                <div class="texto">
+                    <p> Usando o comando for, desenvolva um programa 
+                        javascript para calcular o valor aproximado da série: 1/2 + 
+                        1/4 + 1/6 + 1/8 + ... + 1/2*i +...
+                    </p>
+                </div>
+
+                <div class="formulario">
+                    <input type="submit" value="Testar exercicio" id="botao10" class="botao">
+                </div>
+
+                <p id="resposta10" class="resposta"></p>
+
+                <script>
+                    let button10 = document.getElementById("botao10");
+
+                    button10.onclick = function(){
+                        let i = 5;
+                        let soma = 0;
+                        let conta = "";
+
+                        for(let x = 1; x <= i; x++){
+                            soma += ((1) / (2 * x));
+                            if(x !== i){
+                            conta += "1/" + 2 * x + " + ";               //Arrumar
+                            }else{                              
+                                conta += " = " + soma;
+                            }
+                        }
+
+                        document.getElementById("resposta10").innerHTML = conta;
+                    }
+                </script>
+             </div>
+
+             <!--EXERCICIO 11-->
+             <div class="exercicio">
+                <div class="titulo">
+                    <h1>Exercício 11</h1>
+                </div>
+                <div class="texto">
+                    <p>Escreva um algoritmo que lê 3 números e imprime o 
+                        maior dos 3.
+                    </p>
+                </div>
+
+                <div class="formulario">
+                    <label for="n1">1ª valor:</label>
+                    <input type="number" id="n1" class="inputs"><br>
+
+                    <label for="n2">2ª valor:</label>
+                    <input type="number" id="n2" class="inputs"><br>
+
+                    <label for="n3">3ª valor:</label>
+                    <input type="number" id="n3" class="inputs">
+
+                    <input type="submit" value="OK" id="botao11" class="botao">
+                </div>
+
+                <p id="resposta11" class="resposta"></p>
+
+                <script>
+                    let button11 = document.getElementById("botao11");
+
+                    button11.onclick = function(){
+                        let n1 = +document.getElementById("n1").value;
+                        let n2 = +document.getElementById("n2").value;
+                        let n3 = +document.getElementById("n3").value;
+
+                        if (n1 >= n2 && n1 >= n3){
+                            maior = n1
+                        }else if (n2 >= n1 && n2 >= n3){
+                            maior = n2
+                        }else if (n3 >= n1 && n3 >= n2){
+                            maior = n3
+                        }
+
+                        document.getElementById("resposta11").innerHTML = "Maior número: " + maior;
+                    }
+                </script>
+            </div>
+
+            <!--EXERCICIO 12-->
+            <div class="exercicio">
+                <div class="titulo">
+                    <h1>Exercício 12</h1>
+                </div>
+                <div class="texto">
+                    <p>Escreva um algoritmo que imprima as tabelas de 
+                        multiplicação de 1 até 10.
+                    </p>
+                </div>
+
+                <div class="formulario">
+                    <input type="submit" value="Testar exercicio" id="botao12" class="botao">
+                </div>
+
+                <p id="resposta12" class="resposta"></p>
+
+                <script>
+                    let button12 = document.getElementById("botao12");
+                    let mult = 0;
+                    const tabela = document.getElementById("resposta12");
+
+                    button12.onclick = function(){
+                        for (let x = 1; x <= 10; x++){
+                            tabela.innerHTML = tabela.innerHTML + "Tabuada do " + x + " ---> ";
+                            for(let y = 1; y <= 10; y++){
+                                mult = x * y;
+                                tabela.innerHTML = tabela.innerHTML + " | " + mult + " "; 
+                                if (y === 10){
+                                    tabela.innerHTML = tabela.innerHTML + "<br><br>";
+                                }
+                            }
+                        }
+                    }
+                </script>
+            </div>
+
+            <!--EXERCICIO 13-->
+            <div class="exercicio">
+                <div class="titulo">
+                    <h1>Exercício 13</h1>
+                </div>
+                <div class="texto">
+                    <p>Escreva um algoritmo que lê um valor n inteiro e 
+                        positivo e que calcula a seguinte soma:
+                             S := 1 + 1/2 + 1/3 + 1/4 + ... + 1/n
+                    </p>
+                </div>
+
+                <div class="formulario">
+                    <label for="n">N:</label>
+                    <input type="number" id="n" class="inputs">
+
+                    <input type="submit" value="Testar exercicio" id="botao13" class="botao">
+                </div>
+
+                <p id="resposta13" class="resposta"></p>
+
+                <script>
+                    let button13 = document.getElementById("botao13");
+
+                    button13.onclick = function(){
+                        let n = +document.getElementById("n").value;
+                        let soma = 0;
+                        const s = document.getElementById("resposta13");
+
+                        s.innerHTML += "Resposta: ";
+
+                        for (x = 1; x <= n; x++){
+                            soma += 1 / x;
+                            if (x === 1){
+                                s.innerHTML += 1 + "/" + x;
+                            }else{
+                                s.innerHTML += " + " + 1 + "/" + x;
+                                if (x === n){
+                                    s.innerHTML += " = " + soma.toFixed(2);
+                                }
+                            }
+                        }
+                    }
+                </script>
+            </div>
+
+            <!--EXERCICIO 14-->
+            <div class="exercicio">
+                <div class="titulo">
+                    <h1>Exercício 14</h1>
+                </div>
+                <div class="texto">
+                    <p> Escreva um programa que calcule o valor do número 
+                        irracional Pi, a partir da seguinte série (formula 
+                        Gregory-Leibniz):
+                             S = 4 - 4/3 + 4/5 - 4/7 + 4/9....
+                    </p>
+                </div>
+
+                <div class="formulario">
+                    <label for="x">Digite um numero:</label>
+                    <input type="number" id="x" class="inputs">
+
+                    <input type="submit" value="Testar exercicio" id="botao14" class="botao">
+                </div>
+
+                <p id="resposta14" class="resposta"></p>
+
+                <script>
+                    let button14 = document.getElementById("botao14");
+
+                    button14.onclick = function(){
+                        let x = +document.getElementById("x").value;
+                        let soma = 0;
+                        let controle = true;
+                        for (i = 1; i <= x; i += 2){
+                            if (controle){
+                                soma += 4/i; 
+                                controle = false;
+                            }else{
+                                soma -= 4/i;
+                                controle = true;
+                            }
+                        }
+                        document.getElementById("resposta14").innerHTML = "Pi = " + soma;
+                    }
+                </script>
+            </div>
+
+            <!--EXERCICIO 15-->
+            <div class="exercicio">
+                <div class="titulo">
+                    <h1>Exercício 15</h1>
+                </div>
+                <div class="texto">
+                    <p> Escreva um programa que, a partir de um nome 
+                        informado pelo usuário, exiba suas iniciais. As iniciais 
+                        são formadas pela primeira letra de cada nome, sendo que 
+                        todas deverão aparecer em maiúsculas na saída do 
+                        programa. Note que os conectores e, do, da, dos, das, de, 
+                        di, du não são considerados nomes e, portanto, não devem 
+                        ser considerados para a obtenção das iniciais. As iniciais 
+                        devem ser impressas em maiúsculas, ainda que o nome 
+                        seja entrado todo em minúsculas.<br><br>
+                        ▸ Exemplo: <br>
+                        ▹ Maria das Graças Pimenta => MGP
+                    </p>
+                </div>
+
+                <div class="formulario">
+                    <label for="nome">Nome completo:</label>
+                    <input type="text" id="nome" class="inputs">
+    
+                    <input type="submit" value="OK" id="botao15" class="botao">
+                </div>
+
+                <p id="resposta15" class="resposta"></p>
+
+                <script>
+                    let button15 = document.getElementById("botao15");
+
+                    button15.onclick = function(){
+                        let nome = document.getElementById("nome").value;
+                        let list = nome.split(" ");
+                        let iniciais = "";
+
+                        for (i = 0; i <= list.length - 1; i++){
+                            switch(list[i]){
+                                case "da":
+                                    break;
+                                case "do":
+                                    break;
+                                case "das":
+                                    break;
+                                case "dos":
+                                    break;   
+                                case "de":
+                                    break; 
+                                default:   
+                                    iniciais += list[i][0];
+                            }
+                        }
+                        document.getElementById("resposta15").innerHTML = nome + " => " + iniciais.toUpperCase();
+                    }
+                </script>
+            </div>
+
+            <!--EXERCICIO 16-->
+            <div class="exercicio">
+                <div class="titulo">
+                    <h1>Exercício 16</h1>
+                </div>
+                <div class="texto">
+                    <p> Nome ao contrário em maiúsculas. Faça um
+                        programa que permita ao usuário digitar o seu nome e em
+                        seguida mostre o nome do usuário de trás para frente
+                        utilizando somente letras maiúsculas. <br>
+                        Dica: lembre se
+                        que ao informar o nome o usuário pode digitar letras
+                        maiúsculas ou minúsculas.
+                    </p>
+                </div>
+                
+                <div class="formulario">
+                    <label for="nome2">Nome completo:</label>
+                    <input type="text" id="nome2" class="inputs">
+    
+                    <input type="submit" value="OK" id="botao16" class="botao">
+                </div>
+
+                <p id="resposta16" class="resposta"></p>
+
+                <script>
+                    let button16 = document.getElementById("botao16");
+
+                    button16.onclick = function(){
+                        let nome2 = document.getElementById("nome2").value;
+                        let invertido = "";
+                        let letras = nome2.split("");
+
+                        letras.reverse();
+
+                        for (let i = 0; i != letras.length - 1; i++){
+                            invertido += letras[i];
+                        }
+
+                        document.getElementById("resposta16").innerHTML = invertido.toUpperCase();
+                    }
+                </script>
+            </div>
+
+            <!--EXERCICIO 17-->
+            <div class="exercicio">
+                <div class="titulo">
+                    <h1>Exercício 17</h1>
+                </div>
+                <div class="texto">
+                    <p> Data por extenso. Faça um programa que solicite a
+                        data de nascimento (dd/mm/aaaa) do usuário e imprima
+                        a data com o nome do mês por extenso.<br>
+                        ▸ Data de Nascimento: 29/10/1973 <br>
+                        ▹ Você nasceu em 29 de Outubro de 1973.
+                    </p>
+                </div>
+
+                <div class="formulario">
+                    <label for="data">Data de nascimento:</label>
+                    <input type="date" id="data" class="inputs">
+
+                    <input type="submit" value="OK" id="botao17" class="botao">
+                </div>
+
+                <p id="resposta17" class="resposta"></p>
+
+                <script>
+                    let button17 = document.getElementById("botao17");
+
+                    button17.onclick = function(){
+                        let data = document.getElementById("data").value;
+
+                        let infoData = data.split("-");
+                        let mes = parseInt(infoData[1]);
+                        let meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outrubro", "Novembro", "Dezembro"];
+
+                        document.getElementById("resposta17").innerHTML = "Você nasceu em " + infoData[2] + " de " + meses[mes - 1] + " de " + infoData[0];
+                    }
+                </script>
+            </div>
+
+             <!--EXERCICIO 18-->
+             <div class="exercicio">
+                <div class="titulo">
+                    <h1>Exercício 18</h1>
+                </div>
+                <div class="texto">
+                    <p> Conta espaços e vogais. Dado uma string com uma
+                        frase informada pelo usuário (incluindo espaços
+                        em branco), conte: <br>
+                        a. quantos espaços em branco existem na frase. <br>
+                        b. quantas vezes aparecem as vogais a, e, i, o, u.
+                    </p>
+                </div>
+
+                <div class="formulario">
+                    <label for="txt">Digite algo:</label>
+                    <input type="text" id="txt" class="inputs">
+
+                    <input type="submit" value="OK" id="botao18" class="botao">
+                </div>
+
+                <p id="resposta18" class="resposta"></p>
+
+                <script>
+                    let button18 = document.getElementById("botao18");
+
+                    button18.onclick = function(){
+                        let txt = document.getElementById("txt").value;
+                        let espaco = 0;
+                        let vogais = 0;
+
+                        for(let p = 0; p <= txt.length; p++){
+                            switch(txt[p]){
+                                case "a":
+                                    vogais++;
+                                    break;
+                                case "e":
+                                    vogais++;
+                                    break;
+                                case "i":
+                                    vogais++;
+                                    break;
+                                case "o": 
+                                    vogais++;
+                                    break;
+                                case "u":
+                                    vogais++;
+                                    break;
+                                case " ": 
+                                    espaco++;
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        document.getElementById("resposta18").innerHTML = "Quantidade de vogais: " + vogais + "<br> Quantidade espaços em branco: " + espaco;
+                    }
+                </script>
+             </div>
+
+             <!--EXERCICIO 19-->
+             <div class="exercicio">
+                <div class="titulo">
+                    <h1>Exercício 19</h1>
+                </div>
+                <div class="texto">
+                    <p> Palíndromo. Um palíndromo é uma sequência de
+                        caracteres cuja leitura é idêntica se feita da direita para
+                        esquerda ou vice-versa. Por exemplo: OSSO e OVO são
+                        palíndromos. Em textos mais complexos os espaços e
+                        pontuação são ignorados. A frase SUBI NO ONIBUS é o
+                        exemplo de uma frase palíndroma onde os espaços foram
+                        ignorados. Faça um programa que leia uma sequência de
+                        caracteres, mostre-a e diga se é um palíndromo ou não.
+                    </p>
+                </div>
+
+                <div class="formulario">
+                    <label for="txt2">Palíndromo:</label>
+                    <input type="text" id="txt2" class="inputs">
+
+                    <input type="submit" value="OK" id="botao19" class="botao">
+                </div>
+
+                <p id="resposta19" class="resposta"></p>
+
+                <script>
+                    let button19 = document.getElementById("botao19");
+
+                    button19.onclick = function(){
+                        let texto = document.getElementById("txt2").value;
+                        texto = texto.split(" ");
+                        texto = texto.join("");
+
+                        for(let k = 0; k <= texto.length - 1; k++){
+                            for(let t = texto.length - 1; t >= 0; t--){
+                                if(texto[k] === texto[t]){
+                                    document.getElementById("resposta19").innerHTML = "É um palíndromo!";
+                                }else{
+                                    document.getElementById("resposta19").innerHTML = "Não é um palíndromo!";
+                                }
+                            }
+                        }
+                    }
+                </script>
+            </div>
+
+            <!--EXERCICIO 20-->
+            <div class="exercicio">
+                <div class="titulo">
+                    <h1>Exercício 20</h1>
+                </div>
+                <div class="texto">
+                    <p> O código de César é uma das mais simples e
+                        conhecidas técnicas de criptografia. É um tipo de
+                        substituição na qual cada letra do texto é substituída por
+                        outra, que se apresenta no alfabeto abaixo dela um
+                        numero fixo de vezes. <br>
+                        Por exemplo, com uma troca de três
+                        posições, 'A' seria substituído por 'D', 'B' se tornaria 'E', e
+                        assim por diante.<br>
+                        Implemente um programa que faça uso
+                        desse Código de César (3 posições), entre com uma string
+                        e retorne a string codificada. <br><br>
+                        Exemplo: a ligeira raposa
+                        marrom saltou sobre o cachorro cansado Nova string: D
+                        OLJHLUD UDSRVD PDUURP VDOWRX VREUH R FDFKRUUR
+                        FDQVDGR
+                    </p>
+                </div>
+
+                <div class="formulario">
+                    <label for="codigo">Mensagem:</label>
+                    <input type="text" id="codigo" class="inputs">
+
+                    <input type="submit" value="Codificar mensagem" id="botao20" class="botao">
+                </div>
+
+                <p id="resposta20" class="resposta"></p>
+
+                <script>
+                    let button20 = document.getElementById("botao20");
+
+                    button20.onclick = function(){
+                        let alfabeto = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
+                        "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+                        let mensagem = document.getElementById("codigo").value;
+                        let criptografado = "";
+
+                        mensagem = mensagem.toUpperCase();
+
+                        for(l = 0; l <= mensagem.length - 1; l++){
+                            for(a = 0; a <= alfabeto.length - 1; a++){
+                                if(mensagem[l] === " "){
+                                    criptografado += " ";
+                                }else if(mensagem[l] === alfabeto[a]){
+                                    criptografado += alfabeto[a + 3];
+                                }
+                            }
+                        }
+                        document.getElementById("resposta20").innerHTML = criptografado;
+                    }
+                </script>
+            </div>
+
+            <!--EXERCICIO 21-->
+            <div class="exercicio">
+                <div class="titulo">
+                    <h1>Exercício 21</h1>
+                </div>
+                <div class="texto">
+                    <p> Crie uma função que compara duas variáveis do tipo
+                        string e retornar true se as duas strings forem iguais.
+                    </p>
+                </div>
+
+                <div class="formulario">
+                    <label for="str1">String 1:</label>
+                    <input type="text" id="str1" class="inputs"><br>
+
+                    <label for="str2">String 2:</label>
+                    <input type="text" id="str2" class="inputs">
+
+                    <input type="submit" value="OK" id="botao21" class="botao">
+                </div>
+
+                <p id="resposta21" class="resposta"></p>
+
+                <script>
+                    let button21 = document.getElementById("botao21");
+
+                    button21.onclick = function(){
+                        let str1 = document.getElementById("str1").value;
+                        let str2 = document.getElementById("str2").value;
+
+                        function comparar(str1, str2){
+                        if (str1 === str2){
+                            return true;
+                        }else{
+                            return false;
+                        }
+                    }
+                        comparar(str1, str2) ? document.getElementById("resposta21").innerHTML = "Strings iguais" : document.getElementById("resposta21").innerHTML = "Strings diferentes";
+                    }
+                </script>
+            </div>
+
+            <!--EXERCICIO 22-->
+            <div class="exercicio">
+                <div class="titulo">
+                    <h1>Exercício 22</h1>
+                </div>
+                <div class="texto">
+                    <p> Crie uma função que imprime um valor inteiro em
+                        binário.
+                    </p>
+                </div>
+
+                <div class="formulario">
+                    <label for="int">Número inteiro:</label>
+                    <input type="number" id="int" class="inputs">
+
+                    <input type="submit" value="Converter em binário" id="botao22" class="botao">
+                </div>
+
+                <p id="resposta22" class="resposta"></p>
+
+                <script>
+                    let button22 = document.getElementById("botao22");
+
+                    button22.onclick = function(){
+                        let inteiro = +document.getElementById("int").value;
+                        let num = inteiro;
+                        let binario = "";
+                        let binarioInvertido = "";
+
+                        do{ 
+                            resto = Math.ceil(inteiro % 2);
+                            if(resto === 0){
+                                binario += "0";
+                            }else{
+                                binario += "1";
+                            }
+                            inteiro = Math.floor(inteiro / 2);
+                        }while(inteiro > 1)
+
+                        binario += "1";
+
+                        for(i = binario.length - 1; i >= 0; i--){
+                            binarioInvertido += binario[i];
+                        }
+
+                        document.getElementById("resposta22").innerHTML = num + " = " + binarioInvertido;
+                    }
+                </script>
+            </div>
+
+            <!--EXERCICIO 23-->
+            <div class="exercicio">
+                <div class="titulo">
+                    <h1>Exercício 23</h1>
+                </div>
+                <div class="texto">
+                    <p>  Crie uma função que receba uma string binária e
+                        retorne um valor em decimal.
+                    </p>
+                </div>
+
+                <div class="formulario">
+                    <label for="strbin">Número binário:</label>
+                    <input type="text" id="strbin" class="inputs">
+
+                    <input type="submit" value="Converter em decimal" id="botao23" class="botao">
+                </div>
+
+                <p id="resposta23" class="resposta"></p>
+
+                <script>
+                    let button23 = document.getElementById("botao23");
+
+                    button23.onclick = function(){
+                    let strBinario = document.getElementById("strbin").value;
+                    let binario = strBinario.split("");
+                    let decimal = 0;
+
+                    for (i = 0; i <= binario.length - 1; i++){
+                        switch (binario[i]){
+                            case "1":
+                                binario[i] = 1;
+                                break;
+                            case "0":
+                                binario[i] = 0;
+                                break;
+                        }
+                    }
+
+                    for(x = 0; x <= binario.length - 1; x++){
+                        decimal += (2 ** x) *  binario[(binario.length - 1) - x];
+                    }
+
+                    document.getElementById("resposta23").innerHTML = strBinario + " = " + decimal;
+                    }
+                </script>
+            </div>
+
+            <!--EXERCICIO 24-->
+            <div class="exercicio">
+                <div class="titulo">
+                    <h1>Exercício 24</h1>
+                </div>
+                <div class="texto">
+                    <p> Escreva uma função que imprima um mês de acordo
+                        com o número digitado pelo usuário (1 - Janeiro, 12 -
+                        Dezembro).
+                    </p>
+                </div>
+
+                <div class="formulario">
+                    <label for="mes">Número do mês:</label>
+                    <input type="number" id="mes" class="inputs">
+
+                    <input type="submit" value="OK" id="botao24" class="botao">
+                </div>
+
+                <p id="resposta24" class="resposta"></p>
+
+                <script>
+                    let button24 = document.getElementById("botao24");
+
+                    button24.onclick = function(){
+                        let numeroMes = +document.getElementById("mes").value;
+                        let meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outrubro", "Novembro", "Dezembro"];
+
+                        document.getElementById("resposta24").innerHTML = numeroMes + " - " + meses[numeroMes - 1];
+                    }
+                </script>
+            </div>
+
+             <!--EXERCICIO 25-->
+            <div class="exercicio">
+                <div class="titulo">
+                    <h1>Exercício 25</h1>
+                </div>
+                <div class="texto">
+                    <p> Escreva uma função que receba dois valores inteiros
+                        e um identificador de uma operação (soma == 0,
+                        subtração == 1, divisão == 2 e multiplicação == 3).<br>
+                        O seu procedimento deve executar a operação matemática
+                        desejada e imprimir o resultado na tela.
+                    </p>
+                </div>
+
+                <div class="formulario">
+                    <label for="mes">Valor 1:</label>
+                    <input type="number" id="v1" class="inputs"><br>
+
+                    <label for="mes">Valor 2:</label>
+                    <input type="number" id="v2" class="inputs"><br>
+
+                    <label for="mes">Operação:</label>
+                    <input type="number" id="operacao" class="inputs">
+
+                    <input type="submit" value="OK" id="botao24" class="botao">
+                </div>
+
+                <script>
+
+                </script>
+
+            </div>
+        </main>
+    </body>
+</html>

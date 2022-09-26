@@ -1,0 +1,81 @@
+header {
+    min-width: 200px;
+    font-size: 40px;
+    text-align: center;
+    background: #40BFAA;
+    padding: 10px 10px;
+    margin: 10px 10px;
+    border: 2px solid rgb(91, 91, 91);
+}
+
+body {
+    background: rgb(255, 255, 255);
+}
+
+.exercicio {
+    width: auto;
+    min-width: 150px;
+    height: auto;
+    background: #BEEBE4;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.titulo  {
+    width: 10%;
+    min-width: 100px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    background: #7ED6C8;
+    margin: 10px;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 5%;
+
+}
+
+.texto {
+    margin: 5px;
+    padding: 5px;
+    position: relative;
+    display: block;
+}
+
+.formulario {
+    display: block;
+    margin: 10px;
+}
+
+.inputs{
+    max-width: 3%;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    text-align: center;
+    padding-left: 15px;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+
+.botao {
+    border-radius: 5px;
+    border: 2px solid gray;
+    cursor: pointer;
+    margin-left: 0%;
+
+}
+
+.resposta {
+    margin-left: 1%;
+    overflow-x: auto;
+
+}
+
+#nome, #nome2, #data, #txt, #txt2, #codigo{
+    max-width: 10%;
+    text-align: left;
+}
